@@ -3,6 +3,8 @@ import path from "node:path";
 
 const userDataDB = path.resolve(process.cwd(), "./src/db/users.json");
 const bookshelfDB = path.resolve(process.cwd(), "./src/db/bookshelves.json");
+const booksDB = path.resolve(process.cwd(), "./src/db/books.json");
+
 
 // This file handles making the actual sql/json requests and returns the result to be handled by controllers.js
 
@@ -66,4 +68,35 @@ async function getAllBookshelves() {
     }
 
     return JSON.parse(bookshelves);
+}
+
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get all books */
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+async function getAllBooks() {
+    const bookList = await fs.readFile(booksDB, "utf8");
+
+    if (!bookList) {
+        return [];
+    }
+    const listOfBooks = JSON.parse(bookList);
+
+    return listOfBooks;
+}
+
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get book by id */
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getBook(book_id) {
+    const books = await getAllBooks();
+
+    const match = books.find(
+        (book) => Number(book["book_id"]) === Number(book_id)
+    );
+
+    return match;
 }

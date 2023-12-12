@@ -66,3 +66,19 @@ export async function getBookshelves(req, res) {
     }
 
 }
+
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get book by id
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getBook(req, res) {
+    console.log(`getBook() in controllers.js has been called`);
+    const book = await apiRequests.getBook(req.query["book_id"]);
+
+    res.status(200).json({
+        success: true,
+        payload: book,
+        // check this later
+    });
+}
