@@ -2,6 +2,7 @@ import { promises as fs, write } from "node:fs";
 import path from "node:path";
 
 const userDataDB = path.resolve(process.cwd(), "./src/db/users.json");
+const bookshelfDB = path.resolve(process.cwd(), "./src/db/bookshelves.json");
 
 // This file handles making the actual sql/json requests and returns the result to be handled by controllers.js
 
@@ -37,4 +38,32 @@ export async function getSpecificUser(user_id) {
     }
     console.log(`selectedUser was not found`);
     return null;
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get bookshelves by array
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getBookshelves(user_id) {
+    const bookshelves = await getAllBookshelves();
+
+    const matches = bookshelves.filter(
+        (shelf) => shelf["owned_by_user"] === user_id
+    );
+
+    return matches;
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get all bookshelves for processing
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+async function getAllBookshelves() {
+    const bookshelves = await fs.readFile(bookshelfDB, "utf8");
+
+    if (!bookshelves) {
+        return [];
+    }
+
+    return JSON.parse(bookshelves);
 }

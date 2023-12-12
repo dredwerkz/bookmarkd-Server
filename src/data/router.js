@@ -8,6 +8,8 @@ export const bookmarkdRouter = express.Router();
 bookmarkdRouter.get("/all", apiController.getAllUsers);
 bookmarkdRouter.get("/user", apiController.getSpecificUser)
 
+bookmarkdRouter.get("/bookshelves", apiController.getBookshelves)
+
 
 /* 
 bookmarkdRouter.get("/", apiController.getRandomBottles);
