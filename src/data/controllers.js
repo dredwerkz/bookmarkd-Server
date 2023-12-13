@@ -82,3 +82,19 @@ export async function getBook(req, res) {
         // check this later
     });
 }
+
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get book data or a user 
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getBookData(req, res){
+    console.log(`getBookData() has been called with user_id ${req.query["user_id"]} and book_id ${req.query["book_id"]} `);
+     const bookData = await apiRequests.getBookData(req.query["user_id"],req.query["book_id"]);
+
+    res.status(200).json({
+        success: true,
+        payload: bookData,
+    });
+
+}

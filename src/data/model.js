@@ -4,6 +4,8 @@ import path from "node:path";
 const userDataDB = path.resolve(process.cwd(), "./src/db/users.json");
 const bookshelfDB = path.resolve(process.cwd(), "./src/db/bookshelves.json");
 const booksDB = path.resolve(process.cwd(), "./src/db/books.json");
+const bookDataDB = path.resolve(process.cwd(), "./src/db/user_book_data.json");
+
 
 
 // This file handles making the actual sql/json requests and returns the result to be handled by controllers.js
@@ -99,4 +101,33 @@ export async function getBook(book_id) {
     );
 
     return match;
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get all user book data */
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getAllBookData() {
+    const bookData = await fs.readFile(bookDataDB, "utf8");
+
+    if (bookData) {
+        return [];
+    }
+    const listOfBookData = JSON.parse(bookData);
+
+    return listOfBookData;
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get book by id */
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getBookData(user_id ,book_id) {
+    const bookData = await getAllBookData();
+
+    const userMatches = bookData.filter((data)=> data["user_id"]=== user_id)
+    console.log(userMatches)
+    const bookMatch = userMatches.find((data)=> String(data["book_id"])=== String(book_id))
+console.log(bookMatch)
+    return bookMatch;
 }
