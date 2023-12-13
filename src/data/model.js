@@ -110,7 +110,7 @@ export async function getBook(book_id) {
 export async function getAllBookData() {
     const bookData = await fs.readFile(bookDataDB, "utf8");
 
-    if (bookData) {
+    if (!bookData) {
         return [];
     }
     const listOfBookData = JSON.parse(bookData);
@@ -126,8 +126,8 @@ export async function getBookData(user_id ,book_id) {
     const bookData = await getAllBookData();
 
     const userMatches = bookData.filter((data)=> data["user_id"]=== user_id)
-    console.log(userMatches)
+    
     const bookMatch = userMatches.find((data)=> String(data["book_id"])=== String(book_id))
-console.log(bookMatch)
+
     return bookMatch;
 }
