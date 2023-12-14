@@ -12,7 +12,7 @@ app.use(cors({
 app.use(morgan("dev"));
 app.use(express.json());
 app.use("/api/", bookmarkdRouter);
-app.use(express.static('public/images'))
+app.use(express.static('public'))
 
 export default app;
 
