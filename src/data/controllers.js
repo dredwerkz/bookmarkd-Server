@@ -1,4 +1,12 @@
 import * as apiRequests from "./model.js";
+import OpenAI from "openai";
+import * as dotenv from "dotenv";
+
+
+dotenv.config()
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+})
 
 // This file controls the api request, then repackages it for the router to send back
 
@@ -95,6 +103,34 @@ export async function getBookData(req, res){
     res.status(200).json({
         success: true,
         payload: bookData,
+    });
+
+}
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get AI data 
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getAiRec(req, res){
+    // console.log(`getBookData() has been called with user_id ${req.query["user_id"]} and book_id ${req.query["book_id"]} `);
+    const typeOfResponse= " In a list of 3 book recommandations, give me the author:"
+    // const prompt = req.body.prompt
+    const prompt = "JK Rowling"
+    const response = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "user",
+            // Example: `${"In a list of 3 book recommandations, give me the author: "}, ${" Jk Rowling "}
+            content: `${typeOfResponse}, ${prompt}`,
+          },
+        ],
+        // How long the response will be: 150, 200, 250, 300, 350, 400, 450, 500, 550, 600
+      max_tokens: 450,
+    });
+
+    res.status(200).json({
+        success: true,
+        payload: response.choices[0].message
     });
 
 }
