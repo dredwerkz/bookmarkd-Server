@@ -5,7 +5,8 @@
     "author": "F. Scott Fitzgerald",
     "number_of_pages": 180,
     "date_published": "1925-04-10",
-    "short_description": "A classic novel depicting the decadence of the Jazz Age in America."
+    "short_description": "A classic novel depicting the decadence of the Jazz Age in America.",
+    "overall_rating": 3.9
   },
   {
     "book_id": 2,
@@ -13,7 +14,8 @@
     "author": "Harper Lee",
     "number_of_pages": 324,
     "date_published": "1960-07-11",
-    "short_description": "A powerful exploration of racial injustice in the American South during the 1930s."
+    "short_description": "A powerful exploration of racial injustice in the American South during the 1930s.",
+    "overall_rating": 4.67
   },
   {
     "book_id": 3,
@@ -21,7 +23,8 @@
     "author": "George Orwell",
     "number_of_pages": 328,
     "date_published": "1949-06-08",
-    "short_description": "A dystopian novel portraying a totalitarian society ruled by surveillance and oppression."
+    "short_description": "A dystopian novel portraying a totalitarian society ruled by surveillance and oppression.",
+    "overall_rating": 4.3
   },
   {
     "book_id": 4,
@@ -29,7 +32,8 @@
     "author": "J.R.R. Tolkien",
     "number_of_pages": 310,
     "date_published": "1937-09-21",
-    "short_description": "A fantasy adventure novel following the journey of Bilbo Baggins to reclaim treasure guarded by a dragon."
+    "short_description": "A fantasy adventure novel following the journey of Bilbo Baggins to reclaim treasure guarded by a dragon.",
+    "overall_rating": 3.9
   },
   {
     "book_id": 5,
@@ -37,7 +41,8 @@
     "author": "Jane Austen",
     "number_of_pages": 432,
     "date_published": "1813-01-28",
-    "short_description": "A classic novel exploring themes of love, reputation, and class in early 19th-century England."
+    "short_description": "A classic novel exploring themes of love, reputation, and class in early 19th-century England.",
+    "overall_rating": 3.6
   },
   {
     "book_id": 6,
@@ -45,7 +50,8 @@
     "author": "J.D. Salinger",
     "number_of_pages": 224,
     "date_published": "1951-07-16",
-    "short_description": "A coming-of-age novel narrated by a disenchanted teenager, Holden Caulfield."
+    "short_description": "A coming-of-age novel narrated by a disenchanted teenager, Holden Caulfield.",
+    "overall_rating": 4
   },
   {
     "book_id": 7,
@@ -53,7 +59,8 @@
     "author": "Dan Brown",
     "number_of_pages": 454,
     "date_published": "2003-03-18",
-    "short_description": "A mystery thriller that follows symbologist Robert Langdon as he investigates a murder in the Louvre Museum."
+    "short_description": "A mystery thriller that follows symbologist Robert Langdon as he investigates a murder in the Louvre Museum.",
+    "overall_rating": 4
   },
   {
     "book_id": 8,
@@ -61,7 +68,8 @@
     "author": "Gabriel García Márquez",
     "number_of_pages": 417,
     "date_published": "1967-05-30",
-    "short_description": "A landmark novel in magical realism, tracing the Buendía family over several generations in the fictional town of Macondo."
+    "short_description": "A landmark novel in magical realism, tracing the Buendía family over several generations in the fictional town of Macondo.",
+    "overall_rating": 3
   },
   {
     "book_id": 9,
@@ -69,7 +77,8 @@
     "author": "Paulo Coelho",
     "number_of_pages": 197,
     "date_published": "1988-01-20",
-    "short_description": "A philosophical novel about a young shepherd named Santiago on a journey to fulfill his personal legend."
+    "short_description": "A philosophical novel about a young shepherd named Santiago on a journey to fulfill his personal legend.",
+    "overall_rating": 3.2
   },
   {
     "book_id": 10,
@@ -77,6 +86,7 @@
     "author": "J.R.R. Tolkien",
     "number_of_pages": 1178,
     "date_published": "1954-07-29",
-    "short_description": "An epic fantasy trilogy that follows the quest to destroy the One Ring and defeat the dark lord Sauron."
+    "short_description": "An epic fantasy trilogy that follows the quest to destroy the One Ring and defeat the dark lord Sauron.",
+    "overall_rating": 4.7
   }
 ]
