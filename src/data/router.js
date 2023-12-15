@@ -11,6 +11,8 @@ bookmarkdRouter.get("/user", apiController.getSpecificUser)
 bookmarkdRouter.get("/bookshelves", apiController.getBookshelves)
 bookmarkdRouter.get("/books", apiController.getBook)
 bookmarkdRouter.get("/user_book_data", apiController.getBookData)
+bookmarkdRouter.post("/ai_api", apiController.getAiRec);
+
 
 
 /* 
