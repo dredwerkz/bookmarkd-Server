@@ -112,11 +112,24 @@ export async function getBookData(req, res) {
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 export async function getAiRec(req, res) {
-  // console.log(`getBookData() has been called with user_id ${req.query["user_id"]} and book_id ${req.query["book_id"]} `);
-  const typeOfResponse =
-    "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books from this author: ";
-
   const prompt = req.body.prompt;
+  const searchType = req.body.searchType;
+
+  const typeOfResponse = searchTypeFilter(searchType);
+
+  function searchTypeFilter(searchType) {
+    switch (searchType) {
+      case "author":
+        return "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books with a short description from this author : ";
+      case "title":
+        return "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books with a short description similair to this title: ";
+      case "genre":
+        return "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books with a short description from this author : ";
+      default:
+        return "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books  with a short description from this author: ";
+    }
+  }
+
   // const prompt = "JK Rowling"
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
