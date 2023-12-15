@@ -114,7 +114,8 @@ export async function getBookData(req, res) {
 export async function getAiRec(req, res) {
   // console.log(`getBookData() has been called with user_id ${req.query["user_id"]} and book_id ${req.query["book_id"]} `);
   const typeOfResponse =
-    " In a list of 3 book recommandations, give me the author:";
+    "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books from this author: ";
+
   const prompt = req.body.prompt;
   // const prompt = "JK Rowling"
   const response = await openai.chat.completions.create({
