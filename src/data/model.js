@@ -6,8 +6,6 @@ const bookshelfDB = path.resolve(process.cwd(), "./src/db/bookshelves.json");
 const booksDB = path.resolve(process.cwd(), "./src/db/books.json");
 const bookDataDB = path.resolve(process.cwd(), "./src/db/user_book_data.json");
 
-
-
 // This file handles making the actual sql/json requests and returns the result to be handled by controllers.js
 
 /** //////////////////////////////////////////////////////////////////////////////////////////////
@@ -72,7 +70,6 @@ async function getAllBookshelves() {
     return JSON.parse(bookshelves);
 }
 
-
 /** //////////////////////////////////////////////////////////////////////////////////////////////
 /** Get all books */
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -87,7 +84,6 @@ async function getAllBooks() {
 
     return listOfBooks;
 }
-
 
 /** //////////////////////////////////////////////////////////////////////////////////////////////
 /** Get book by id */
@@ -122,12 +118,40 @@ export async function getAllBookData() {
 /** Get book by id */
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
 
-export async function getBookData(user_id ,book_id) {
+export async function getBookData(user_id, book_id) {
     const bookData = await getAllBookData();
 
-    const userMatches = bookData.filter((data)=> data["user_id"]=== user_id)
-    
-    const bookMatch = userMatches.find((data)=> String(data["book_id"])=== String(book_id))
+    const userMatches = bookData.filter((data) => data["user_id"] === user_id);
+
+    const bookMatch = userMatches.find(
+        (data) => String(data["book_id"]) === String(book_id)
+    );
 
     return bookMatch;
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get search results
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getSearchResults(searchQuery) {
+    const bookData = await getAllBooks();
+
+    const searchResultsTitle = bookData.filter((data) =>
+        data["title"].toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    const searchResultsAuthor = bookData.filter((data) =>
+        data["author"].toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    const rawSearchResults = searchResultsTitle.concat(searchResultsAuthor);
+    console.log(rawSearchResults);
+
+    const searchResults = rawSearchResults.filter(
+        (item, index, self) =>
+            self.findIndex((t) => t.book_id === item.book_id) === index
+    );
+
+    return searchResults;
 }

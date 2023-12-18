@@ -149,3 +149,19 @@ export async function getAiRec(req, res) {
     payload: response.choices[0].message,
   });
 }
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get search results
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getSearchResults(req, res) {
+  console.log(
+    `getSearchResults() has been called with search query ${req.query["query"]}`
+  );
+  const searchResults = await apiRequests.getSearchResults(req.query["search"]);
+
+  res.status(200).json({
+    success: true,
+    payload: searchResults,
+  });
+}
