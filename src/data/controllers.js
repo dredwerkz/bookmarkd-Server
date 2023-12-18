@@ -120,7 +120,7 @@ export async function getAiRec(req, res) {
   function searchTypeFilter(searchType) {
     switch (searchType) {
       case "author":
-        return "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books with a short description from this author : ";
+        return "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books with author's name and a short description, from this author : ";
       case "title":
         return "Give me a numbered list of 3 book recommandations, format use number with a fullstop, give me books with a short description similair to this title: ";
       case "genre":
