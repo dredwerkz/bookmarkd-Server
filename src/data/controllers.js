@@ -198,3 +198,36 @@ export async function deleteFromFavourites(req, res) {
       payload: confirmation,
     });
   }
+
+  /** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Add book to Completed
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function addToCompleted(req, res) {
+    console.log(
+      `addToCompleted() has been called with book_id ${req.query["book_id"]} and user_id ${req.query["user_id"]}`
+    );
+    const confirmation = await apiRequests.addToCompleted(req.query["book_id"], req.query["user_id"]);
+  
+    res.status(200).json({
+      success: true,
+      payload: confirmation,
+    });
+  }
+
+
+  /** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Delete book from Completed
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function deleteFromCompleted(req, res) {
+    console.log(
+      `deleteFromCompleted() has been called with book_id ${req.query["book_id"]} and user_id ${req.query["user_id"]}`
+    );
+    const confirmation = await apiRequests.deleteFromCompleted(req.query["book_id"], req.query["user_id"]);
+  
+    res.status(200).json({
+      success: true,
+      payload: confirmation,
+    });
+  }

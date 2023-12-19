@@ -157,6 +157,17 @@ export async function getSearchResults(searchQuery) {
 }
 
 /** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Write bookshelf JSON file
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function writeBookshelfFile(array) {
+    const JSONPayload = JSON.stringify(array);
+    await fs.writeFile(bookshelfDB, JSONPayload);
+
+    console.log("Bookshelves written to file.");
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
 /** Add book to favourites
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -208,12 +219,52 @@ export async function deleteFromFavourites(book_id, user_id) {
 }
 
 /** //////////////////////////////////////////////////////////////////////////////////////////////
-/** Write bookshelf JSON file
+/** Add book to Completed
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
 
-export async function writeBookshelfFile(array) {
-    const JSONPayload = JSON.stringify(array);
-    await fs.writeFile(bookshelfDB, JSONPayload);
+export async function addToCompleted(book_id, user_id) {
+    const bookshelves = await getAllBookshelves();
 
-    console.log("Bookshelves written to file.");
+    bookshelves
+        .filter(
+            (shelf) =>
+                shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+        )[0]
+        .bookshelf_books.push(Number(book_id));
+
+    writeBookshelfFile(bookshelves);
+
+    return bookshelves.filter(
+        (shelf) =>
+            shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+    );
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Delete book from Completed
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function deleteFromCompleted(book_id, user_id) {
+    const bookshelves = await getAllBookshelves();
+
+    const indexOfBookToDelete = bookshelves
+        .filter(
+            (shelf) =>
+                shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+        )[0]
+        .bookshelf_books.indexOf(Number(book_id));
+
+    bookshelves
+        .filter(
+            (shelf) =>
+                shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+        )[0]
+        .bookshelf_books.splice(indexOfBookToDelete, 1);
+
+    writeBookshelfFile(bookshelves);
+
+    return bookshelves.filter(
+        (shelf) =>
+            shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+    );
 }
