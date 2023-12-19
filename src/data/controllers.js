@@ -165,3 +165,36 @@ export async function getSearchResults(req, res) {
     payload: searchResults,
   });
 }
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Add book to favourites
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function addToFavourites(req, res) {
+    console.log(
+      `addToFavourites() has been called with book_id ${req.query["book_id"]} and user_id ${req.query["user_id"]}`
+    );
+    const confirmation = await apiRequests.addToFavourites(req.query["book_id"], req.query["user_id"]);
+  
+    res.status(200).json({
+      success: true,
+      payload: confirmation,
+    });
+  }
+
+
+  /** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Delete book from favourites
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function deleteFromFavourites(req, res) {
+    console.log(
+      `deleteFromFavourites() has been called with book_id ${req.query["book_id"]} and user_id ${req.query["user_id"]}`
+    );
+    const confirmation = await apiRequests.deleteFromFavourites(req.query["book_id"], req.query["user_id"]);
+  
+    res.status(200).json({
+      success: true,
+      payload: confirmation,
+    });
+  }

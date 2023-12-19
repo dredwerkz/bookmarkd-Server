@@ -14,6 +14,9 @@ bookmarkdRouter.get("/search", apiController.getSearchResults)
 
 bookmarkdRouter.post("/ai_api", apiController.getAiRec);
 
+bookmarkdRouter.patch("/fav", apiController.addToFavourites)
+bookmarkdRouter.delete("/fav", apiController.deleteFromFavourites)
+
 
 
 /* 
