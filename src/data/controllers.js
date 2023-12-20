@@ -231,3 +231,19 @@ export async function deleteFromCompleted(req, res) {
       payload: confirmation,
     });
   }
+
+    /** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Add book to Custom Shelf
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function addBookToShelf(req, res) {
+    console.log(
+      `addBookToShelf() has been called with book_id ${req.query["book_id"]}, user_id ${req.query["user_id"]} and bookshelf_id ${req.query["bookshelf_id"]}`
+    );
+    const confirmation = await apiRequests.addBookToShelf(req.query["book_id"], req.query["user_id"], req.query["bookshelf_id"]);
+  
+    res.status(200).json({
+      success: true,
+      payload: confirmation,
+    });
+  }

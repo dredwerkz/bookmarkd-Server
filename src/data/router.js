@@ -20,6 +20,7 @@ bookmarkdRouter.delete("/fav", apiController.deleteFromFavourites)
 bookmarkdRouter.patch("/complete", apiController.addToCompleted)
 bookmarkdRouter.delete("/complete", apiController.deleteFromCompleted)
 
+bookmarkdRouter.patch("/customshelves", apiController.addBookToShelf)
 
 
 /* 

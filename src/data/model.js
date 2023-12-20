@@ -268,3 +268,25 @@ export async function deleteFromCompleted(book_id, user_id) {
             shelf.owned_by_user === user_id && shelf.system_flag === "complete"
     );
 }
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Add book to Completed
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function addBookToShelf(book_id, user_id, bookshelf_id) {
+    const bookshelves = await getAllBookshelves();
+
+    bookshelves
+        .filter(
+            (shelf) =>
+                shelf.owned_by_user === user_id && shelf.bookshelf_id === bookshelf_id
+        )[0]
+        .bookshelf_books.push(Number(book_id));
+
+    writeBookshelfFile(bookshelves);
+
+    return bookshelves.filter(
+        (shelf) =>
+        shelf.owned_by_user === user_id && shelf.bookshelf_id === bookshelf_id
+    );
+}
