@@ -1,5 +1,6 @@
 import { promises as fs, write } from "node:fs";
 import path from "node:path";
+import defaultBookshelves from "../resetdb/bookshelves.js"
 
 const userDataDB = path.resolve(process.cwd(), "./src/db/users.json");
 const bookshelfDB = path.resolve(process.cwd(), "./src/db/bookshelves.json");
@@ -319,6 +320,19 @@ export async function createNewBookshelf(
     bookshelves.push(newBookshelf)
 
     writeBookshelfFile(bookshelves);
+
+    return bookshelves
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Reset Bookshelves
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function resetBookshelves() {
+
+    writeBookshelfFile(defaultBookshelves);
+
+    const bookshelves = await getAllBookshelves();
 
     return bookshelves
 }

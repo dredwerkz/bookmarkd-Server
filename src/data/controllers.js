@@ -284,3 +284,19 @@ export async function createNewBookshelf(req, res) {
         payload: confirmation,
     });
 }
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Reset Bookshelves
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function resetBookshelves(req, res) {
+    console.log(
+        `resetBookshelves() has been called`
+    );
+    const confirmation = await apiRequests.resetBookshelves();
+
+    res.status(200).json({
+        success: true,
+        payload: confirmation,
+    });
+}

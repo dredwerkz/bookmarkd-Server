@@ -1,4 +1,4 @@
-[
+const defaultBookshelves = [
     {
         "bookshelf_id": "1",
         "system_flag": "favs",
@@ -28,3 +28,5 @@
         "owned_by_user": "5"
     }
 ]
+
+export default defaultBookshelves
