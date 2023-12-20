@@ -22,6 +22,8 @@ bookmarkdRouter.delete("/complete", apiController.deleteFromCompleted)
 
 bookmarkdRouter.patch("/customshelves", apiController.addBookToShelf)
 
+bookmarkdRouter.post("/createbookshelf", apiController.createNewBookshelf)
+
 
 /* 
 bookmarkdRouter.get("/", apiController.getRandomBottles);

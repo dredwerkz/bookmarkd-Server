@@ -228,7 +228,8 @@ export async function addToCompleted(book_id, user_id) {
     bookshelves
         .filter(
             (shelf) =>
-                shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+                shelf.owned_by_user === user_id &&
+                shelf.system_flag === "complete"
         )[0]
         .bookshelf_books.push(Number(book_id));
 
@@ -250,14 +251,16 @@ export async function deleteFromCompleted(book_id, user_id) {
     const indexOfBookToDelete = bookshelves
         .filter(
             (shelf) =>
-                shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+                shelf.owned_by_user === user_id &&
+                shelf.system_flag === "complete"
         )[0]
         .bookshelf_books.indexOf(Number(book_id));
 
     bookshelves
         .filter(
             (shelf) =>
-                shelf.owned_by_user === user_id && shelf.system_flag === "complete"
+                shelf.owned_by_user === user_id &&
+                shelf.system_flag === "complete"
         )[0]
         .bookshelf_books.splice(indexOfBookToDelete, 1);
 
@@ -279,7 +282,8 @@ export async function addBookToShelf(book_id, user_id, bookshelf_id) {
     bookshelves
         .filter(
             (shelf) =>
-                shelf.owned_by_user === user_id && shelf.bookshelf_id === bookshelf_id
+                shelf.owned_by_user === user_id &&
+                shelf.bookshelf_id === bookshelf_id
         )[0]
         .bookshelf_books.push(Number(book_id));
 
@@ -287,6 +291,34 @@ export async function addBookToShelf(book_id, user_id, bookshelf_id) {
 
     return bookshelves.filter(
         (shelf) =>
-        shelf.owned_by_user === user_id && shelf.bookshelf_id === bookshelf_id
+            shelf.owned_by_user === user_id &&
+            shelf.bookshelf_id === bookshelf_id
     );
+}
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Create new Bookshelf
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function createNewBookshelf(
+    book_id,
+    user_id,
+    bookshelf_name,
+    bookshelf_id
+) {
+    const bookshelves = await getAllBookshelves();
+
+    const newBookshelf = {
+        bookshelf_id: String(bookshelf_id),
+        system_flag: null,
+        bookshelf_name: String(bookshelf_name),
+        bookshelf_books: [Number(book_id)],
+        owned_by_user: String(user_id),
+    };
+
+    bookshelves.push(newBookshelf)
+
+    writeBookshelfFile(bookshelves);
+
+    return bookshelves
 }
