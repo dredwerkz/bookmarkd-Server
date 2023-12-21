@@ -1,7 +1,7 @@
 [
   {
     "user_id": "9590f44c-1b03-4abe-8292-02f3f409a47b",
-    "current_reading": 3,
+    "current_reading": [3, 2],
     "reading_streak": 15,
     "last_update": "2023-12-10T18:30:00Z",
     "user_bookshelves": [1, 2, 3]

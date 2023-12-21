@@ -300,3 +300,20 @@ export async function resetBookshelves(req, res) {
         payload: confirmation,
     });
 }
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get user's current reads'
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getCurrentBooks(req, res) {
+    console.log(
+        `getCurrentBooks was called looking for user with id ${req.query["user_id"]}`
+    );
+
+    const currentBooks = await apiRequests.getCurrentBooks(req.query["user_id"]);
+
+    res.status(200).json({
+        success: true,
+        payload: currentBooks,
+    });
+}

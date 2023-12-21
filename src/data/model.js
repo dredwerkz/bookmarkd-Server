@@ -336,3 +336,22 @@ export async function resetBookshelves() {
 
     return bookshelves
 }
+
+/** //////////////////////////////////////////////////////////////////////////////////////////////
+/** Get user's current reads'
+/** ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+export async function getCurrentBooks(user_id) {
+    //console.log(`getSpecific user was called in the model`)
+    const listOfUsers = await getAllUsers();
+    const selectedUser = await listOfUsers.find(
+        (users) => String(users.user_id) === String(user_id)
+    );
+
+    if (selectedUser) {
+        console.log(`selectedUser was successfully found`);
+        return selectedUser.current_reading
+    }
+    console.log(`selectedUser was not found`);
+    return null;
+}

@@ -26,6 +26,8 @@ bookmarkdRouter.post("/createbookshelf", apiController.createNewBookshelf)
 
 bookmarkdRouter.patch("/resetbookshelves", apiController.resetBookshelves)
 
+bookmarkdRouter.get("/currentbooks", apiController.getCurrentBooks)
+
 /* 
 bookmarkdRouter.get("/", apiController.getRandomBottles);
 bookmarkdRouter.get("/id/", apiController.getBottleById);
