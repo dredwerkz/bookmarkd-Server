@@ -127,7 +127,8 @@ export async function getBookData(user_id, book_id) {
     const bookMatch = userMatches.find(
         (data) => String(data["book_id"]) === String(book_id)
     );
-
+    console.log(`Fetching book data for user:`)
+    console.log(bookMatch)
     return bookMatch;
 }
 
@@ -147,7 +148,6 @@ export async function getSearchResults(searchQuery) {
     );
 
     const rawSearchResults = searchResultsTitle.concat(searchResultsAuthor);
-    console.log(rawSearchResults);
 
     const searchResults = rawSearchResults.filter(
         (item, index, self) =>

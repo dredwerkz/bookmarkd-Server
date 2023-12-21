@@ -90,7 +90,7 @@ export async function getBook(req, res) {
 }
 
 /** //////////////////////////////////////////////////////////////////////////////////////////////
-/** Get book data or a user 
+/** Get book data for a user 
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 export async function getBookData(req, res) {
@@ -101,6 +101,9 @@ export async function getBookData(req, res) {
         req.query["user_id"],
         req.query["book_id"]
     );
+
+    console.log(`bookData is`)
+    console.log(bookData)
 
     res.status(200).json({
         success: true,
