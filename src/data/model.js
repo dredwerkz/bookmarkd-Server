@@ -29,7 +29,6 @@ export async function getAllUsers() {
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 export async function getSpecificUser(user_id) {
-    //console.log(`getSpecific user was called in the model`)
     const listOfUsers = await getAllUsers();
     const selectedUser = await listOfUsers.find(
         (users) => String(users.user_id) === String(user_id)
@@ -127,8 +126,6 @@ export async function getBookData(user_id, book_id) {
     const bookMatch = userMatches.find(
         (data) => String(data["book_id"]) === String(book_id)
     );
-    console.log(`Fetching book data for user:`)
-    console.log(bookMatch)
     return bookMatch;
 }
 
@@ -342,16 +339,14 @@ export async function resetBookshelves() {
 /** ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 export async function getCurrentBooks(user_id) {
-    //console.log(`getSpecific user was called in the model`)
+
     const listOfUsers = await getAllUsers();
     const selectedUser = await listOfUsers.find(
         (users) => String(users.user_id) === String(user_id)
     );
 
     if (selectedUser) {
-        console.log(`selectedUser was successfully found`);
         return selectedUser.current_reading
     }
-    console.log(`selectedUser was not found`);
     return null;
 }

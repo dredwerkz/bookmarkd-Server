@@ -102,9 +102,6 @@ export async function getBookData(req, res) {
         req.query["book_id"]
     );
 
-    console.log(`bookData is`)
-    console.log(bookData)
-
     res.status(200).json({
         success: true,
         payload: bookData,
