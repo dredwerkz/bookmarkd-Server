@@ -140,16 +140,6 @@
     "overall_rating": 3.7
   },
   {
-    "book_id": 15,
-    "title": "A Tale of Two Cities",
-    "author": "Charles Dickens",
-    "number_of_pages": 448,
-    "date_published": "1859-04-30",
-    "short_description": "A historical novel set in London and Paris before and during the French Revolution.",
-    "image": "/images/A_Tale_of_Two_Cities.png",
-    "overall_rating": 4.4
-  },
-  {
     "book_id": 16,
     "title": "Crime and Punishment",
     "author": "Fyodor Dostoevsky",
