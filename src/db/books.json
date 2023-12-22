@@ -98,5 +98,235 @@
     "short_description": "An epic fantasy trilogy that follows the quest to destroy the One Ring and defeat the dark lord Sauron.",
     "image": "/images/TLOTR.png",
     "overall_rating": 4.7
+  },
+  {
+    "book_id": 11,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "number_of_pages": 311,
+    "date_published": "1932-01-01",
+    "short_description": "A dystopian novel imagining a future society characterized by advanced technology and state control.",
+    "image": "/images/Brave_New_World.png",
+    "overall_rating": 4.2
+  },
+  {
+    "book_id": 12,
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "number_of_pages": 280,
+    "date_published": "1818-01-01",
+    "short_description": "A pioneering science fiction tale about a young scientist who creates a sapient creature in an unorthodox experiment.",
+    "image": "/images/Frankenstein.png",
+    "overall_rating": 4.1
+  },
+  {
+    "book_id": 13,
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "number_of_pages": 400,
+    "date_published": "1847-12-01",
+    "short_description": "A passionate story of love and revenge on the Yorkshire moors.",
+    "image": "/images/Wuthering_Heights.png",
+    "overall_rating": 3.8
+  },
+  {
+    "book_id": 14,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "number_of_pages": 635,
+    "date_published": "1851-10-18",
+    "short_description": "An epic sea adventure centered around Captain Ahab's obsession with a giant white whale.",
+    "image": "/images/Moby_Dick.png",
+    "overall_rating": 3.7
+  },
+  {
+    "book_id": 15,
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "number_of_pages": 448,
+    "date_published": "1859-04-30",
+    "short_description": "A historical novel set in London and Paris before and during the French Revolution.",
+    "image": "/images/A_Tale_of_Two_Cities.png",
+    "overall_rating": 4.4
+  },
+  {
+    "book_id": 16,
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "number_of_pages": 671,
+    "date_published": "1866-01-01",
+    "short_description": "A psychological novel exploring the moral dilemmas of a young man in St. Petersburg.",
+    "image": "/images/Crime_and_Punishment.png",
+    "overall_rating": 4.5
+  },
+  {
+    "book_id": 17,
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "number_of_pages": 863,
+    "date_published": "1605-01-16",
+    "short_description": "A comedic novel following the adventures of a nobleman who becomes a knight-errant.",
+    "image": "/images/Don_Quixote.png",
+    "overall_rating": 4.3
+  },
+  {
+    "book_id": 18,
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "number_of_pages": 1225,
+    "date_published": "1869-01-01",
+    "short_description": "An epic tale of Russian society during the Napoleonic era.",
+    "image": "/images/War_and_Peace.png",
+    "overall_rating": 4.6
+  },
+  {
+    "book_id": 19,
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "number_of_pages": 1463,
+    "date_published": "1862-01-01",
+    "short_description": "A novel about the lives and struggles of several characters in 19th century France.",
+    "image": "/images/Les_Miserables.png",
+    "overall_rating": 4.8
+  },
+  {
+    "book_id": 20,
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "number_of_pages": 864,
+    "date_published": "1877-01-01",
+    "short_description": "A tragic story of a married aristocrat and her affair with the affluent Count Vronsky.",
+    "image": "/images/Anna_Karenina.png",
+    "overall_rating": 4.2
+  },
+  {
+    "book_id": 21,
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "number_of_pages": 824,
+    "date_published": "1880-11-01",
+    "short_description": "A philosophical novel set in 19th century Russia, revolving around the moral struggles of the Karamazov family.",
+    "image": "/images/The_Brothers_Karamazov.png",
+    "overall_rating": 4.7
+  },
+  {
+    "book_id": 22,
+    "title": "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "number_of_pages": 322,
+    "date_published": "1856-01-01",
+    "short_description": "A novel focusing on the life of a doctor's wife who seeks escape through adulterous relationships.",
+    "image": "/images/Madame_Bovary.png",
+    "overall_rating": 3.9
+  },
+  {
+    "book_id": 23,
+    "title": "Great Expectations",
+    "author": "Charles Dickens",
+    "number_of_pages": 544,
+    "date_published": "1861-01-01",
+    "short_description": "A coming-of-age novel about the personal growth and development of an orphan named Pip.",
+    "image": "/images/Great_Expectations.png",
+    "overall_rating": 4.0
+  },
+  {
+    "book_id": 24,
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "number_of_pages": 418,
+    "date_published": "1897-05-26",
+    "short_description": "A gothic horror novel introducing Count Dracula, and his attempt to move from Transylvania to England.",
+    "image": "/images/Dracula.png",
+    "overall_rating": 4.1
+  },
+  {
+    "book_id": 25,
+    "title": "The Adventures of Huckleberry Finn",
+    "author": "Mark Twain",
+    "number_of_pages": 366,
+    "date_published": "1884-12-10",
+    "short_description": "A novel following the adventures of a young boy and an escaped slave as they travel down the Mississippi River.",
+    "image": "/images/Huckleberry_Finn.png",
+    "overall_rating": 3.8
+  },
+  {
+    "book_id": 26,
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "number_of_pages": 500,
+    "date_published": "1847-10-16",
+    "short_description": "A novel following the experiences of Jane Eyre, including her growth to adulthood and her love for Mr. Rochester.",
+    "image": "/images/Jane_Eyre.png",
+    "overall_rating": 4.4
+  },
+  {
+    "book_id": 27,
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "number_of_pages": 320,
+    "date_published": "1890-07-01",
+    "short_description": "A philosophical novel about a young man who remains physically young while his portrait ages.",
+    "image": "/images/Dorian_Gray.png",
+    "overall_rating": 4.3
+  },
+  {
+    "book_id": 28,
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "number_of_pages": 256,
+    "date_published": "1953-10-19",
+    "short_description": "A dystopian novel about a future society where books are banned and 'firemen' burn any that are found.",
+    "image": "/images/Fahrenheit_451.png",
+    "overall_rating": 4.2
+  },
+  {
+    "book_id": 29,
+    "title": "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "number_of_pages": 464,
+    "date_published": "1939-04-14",
+    "short_description": "A novel set during the Great Depression, focusing on a family of tenant farmers driven from their Oklahoma home.",
+    "image": "/images/Grapes_of_Wrath.png",
+    "overall_rating": 4.5
+  },
+  {
+    "book_id": 30,
+    "title": "The Catch-22",
+    "author": "Joseph Heller",
+    "number_of_pages": 453,
+    "date_published": "1961-11-10",
+    "short_description": "A satirical novel set during World War II, exploring the absurdity and illogic of war and military life.",
+    "image": "/images/Catch_22.png",
+    "overall_rating": 4.0
+  },
+  {
+    "book_id": 31,
+    "title": "Heart of Darkness",
+    "author": "Joseph Conrad",
+    "number_of_pages": 112,
+    "date_published": "1899-02-01",
+    "short_description": "A novella about a voyage up the Congo River into the Congo Free State, in the heart of Africa.",
+    "image": "/images/Heart_of_Darkness.png",
+    "overall_rating": 3.7
+  },
+  {
+    "book_id": 33,
+    "title": "Invisible Man",
+    "author": "Ralph Ellison",
+    "number_of_pages": 581,
+    "date_published": "1952-04-14",
+    "short_description": "A novel addressing many of the social and intellectual issues faced by African Americans in the early twentieth century.",
+    "image": "/images/Invisible_Man.png",
+    "overall_rating": 4.4
+  },
+  {
+    "book_id": 34,
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "number_of_pages": 324,
+    "date_published": "1987-09-01",
+    "short_description": "A novel inspired by the African-American experience after the Civil War, exploring themes of family and identity.",
+    "image": "/images/Beloved.png",
+    "overall_rating": 4.3
   }
 ]
